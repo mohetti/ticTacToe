@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script src="script.js" defer></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div class="window-container">
+    <div class="header">Tic Tac Toe</div>
+    <div class="start-screen">
+        <div class="selection-menu">
+        <button class="player-selection" id="player-one">Player One</button>
+        <button class="player-selection" id="player-two">Player Two</button>
+        <div id="vs">vs</div>
+        <button class="player-selection" id="computer">Computer</button>
+    </div>
+    </div>
+
+    <div class="gameboard">
+        <div class="cell unselectable" id="tL" data-parent="0" name="0"></div>
+        <div class="cell unselectable" id="tM" data-parent="1" name="1"></div>
+        <div class="cell unselectable" id="tR" data-parent="2" name="2"></div>
+        <div class="cell unselectable" id="mL" data-parent="3" name="3"></div>
+        <div class="cell unselectable" id="mM" data-parent="4" name="4"></div>
+        <div class="cell unselectable" id="mR" data-parent="5" name="5"></div>
+        <div class="cell unselectable" id="bL" data-parent="6" name="6"></div>
+        <div class="cell unselectable" id="bM" data-parent="7" name="7"></div>
+        <div class="cell unselectable" id="bR" data-parent="8" name="8"></div>
+    </div>
+
+    <div class="modal-bg">
+        <div class="modal">
+            <h2 id="modal-headline">Choose a Name:</h2>
+            <input type="text" id="name">
+            <button id="submit" class="submit">Submit</button>
+            <span class="modal-close">X</span>
+        </div>
+    </div>
+    <div class="frame">
+        <button id="start-game">Start Game</button>
+        <div class="game-buttons">
+            <button id="reset">Reset Board</button>
+            <button id="to-menu">Back to Menu</button>
+        </div>
+    </div>
+    <div class="scoreboard-left">
+            <div class="display-player">
+            <div class="scoreboard-player"></div>
+            <div class="p-win">Wins: </div><div class="player-win">0</div>
+            <div class="p-loss">Losses: </div><div class="player-loss">0</div>
+            <div class="p-tie">Ties: </div><div class="player-tie">0</div>
+        </div>
+    </div>
+    <div class="scoreboard-right">
+        <div class="display-oponent">
+            <div class="scoreboard-oponent"></div>
+            <div class="o-win">Wins: </div><div class="oponent-win">0</div>
+            <div class="o-loss">Losses: </div><div class="oponent-loss">0</div>
+            <div class="o-tie">Ties: </div><div class="oponent-tie">0</div>
+        </div>
+    </div>
+
+    
+</div>
+</body>
+</html>

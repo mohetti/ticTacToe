@@ -1,0 +1,289 @@
+html, body {
+    display: grid;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.window-container {
+    display: grid;
+    height: 100%;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-areas: 
+    "header header header"
+    ". start-screen ."
+    "frame frame frame";
+
+}
+
+.header {
+    grid-area: header;
+    margin-top: 50px;
+    font-size: 30px;
+    text-align: center;
+    color: red;
+    font-weight: bolder;
+}
+
+.start-screen {
+    grid-area: start-screen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30%;
+}
+
+.selection-menu {
+    flex: 1;
+    display: grid;
+    grid-template-rows: 40% 20% 40%;
+    grid-template-areas:
+    ". . player-two"
+    "player-one vs ."
+    ". . computer"
+}
+
+#player-one {
+    grid-area: player-one;
+    background-color: #e7e7e7;
+}
+
+#player-two {
+    grid-area: player-two;
+    background-color: #e7e7e7;
+}
+
+#computer {
+    grid-area: computer;
+    background-color: #e7e7e7;
+}
+
+#start-game {
+    display: flex;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: rgb(37, 36, 36);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+
+#vs {
+    grid-area: vs;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.player-selection {
+    cursor: pointer;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.gameboard {
+    grid-area: gameboard;
+    margin-top: 10%;
+    display: none;
+    justify-content: center;
+    grid-template-rows: 150px 150px 150px;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-areas: 
+    "tL tM tR"
+    "mL mM mR"
+    "bL bM bR";
+}
+
+.frame {
+    grid-area: frame;
+    display: flex;
+    position: fixed;
+    height: 250px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#tL {
+    grid-area: tL;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+#tM {
+    grid-area: tM;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;  
+}
+
+#tR {
+    grid-area: tR;  
+    border-bottom: 2px solid black;
+}
+
+#mL {
+    grid-area: mL; 
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+#mM {
+    grid-area: mM; 
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+}
+
+#mR {
+    grid-area: mR; 
+    border-bottom: 2px solid black;
+}
+
+#bL {
+    grid-area: bL;
+    border-right: 2px solid black;
+}
+
+#bM {
+    grid-area: bM;
+    border-right: 2px solid black;
+}
+
+#bR {
+    grid-area: bR;
+}
+
+.modal-bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; 
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+}
+
+.bg-active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal {
+    position: relative;
+    background-color: white;
+    border-radius: 5px 5px 5px 5px;
+    width: 30%;
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal button {
+    padding: 10px 50px;
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#modal-headline {
+    font-size: 20px;
+}
+
+#submit {
+    margin-top: 5px;
+}
+
+.scoreboard-left {
+    display: none;
+}
+
+.scoreboard-player {
+    grid-area: scoreboard-player;
+    display: flex;
+}
+
+.scoreboard-right {
+    display: none;
+}
+
+.scoreboard-oponent {
+    grid-area: scoreboard-oponent;
+    display: flex;
+}
+
+.game-buttons {
+    display: none;
+}
+
+#reset {
+    display: flex;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: rgb(120, 122, 79);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#to-menu {
+    display: flex;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: rgb(120, 122, 79);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px; 
+}
+
